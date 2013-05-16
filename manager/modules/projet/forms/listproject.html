@@ -7,7 +7,11 @@
 
 	<!--  start page-heading -->
 	<div id="page-heading">
+<<<<<<< HEAD
 		<h1>Liste des Projets</h1>
+=======
+		<h1>Voir Projets</h1>
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
 	</div>
 	<!-- end page-heading -->
 
@@ -41,7 +45,11 @@
                             <div style="float: left;" class="loader"><img src="images/ajax-loader.gif" alt="Loading..." title="Loading..." id="loading" style="display: none" /></div><div style="float: left; margin-left:5px; margin-bottom: 10px;" id="info"></div>
                                 <div class="clear">&nbsp;</div>
                                 <img src="images/arrow-right.jpg" alt="Add This" title="Add This .." id="arrow-right" style="float:right; display: none; opacity: .6; margin: 15px 50px 0 0;" />
+<<<<<<< HEAD
                                 <a href="index.php?module=projet&option=add" class="addnew" id="addnew" style="left: 48%; display: none;">Ajouter un Projet</a>
+=======
+                                <a href="index.php?module=project&option=add" class="addnew" id="addnew" style="left: 48%; display: none;">Créer Nouveau Projet</a>
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
 				<!--  start product-table ..................................................................................... -->
 				<form id="mainform" action="" method="POST" style="display:none">
                                     <table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">
@@ -75,9 +83,15 @@
 			</td>
 			<td>
 			<select id="nb-collabs-show">
+<<<<<<< HEAD
 				<option id="3-c" value="3">3</option>
                                 <option id="5-c" value="5">5</option>
 				<option id="8-c" value="8">8</option>
+=======
+				<option id="nb-collabs-show-c" value="3">3</option>
+                                <option id="nb-collabs-show-c" value="5">5</option>
+				<option id="nb-collabs-show-c" value="8">8</option>
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
 			</select>
 			</td>
 			</tr>
@@ -116,28 +130,49 @@
         $(".page-right").click(function(){
             if($.cookie("nb-collabs-show") == 3) {
                 $.cookie("begin", (parseInt($.cookie("begin"))+3),{expires: 30,path: '/'});
+<<<<<<< HEAD
                 var maxlist = Math.ceil(parseInt($.cookie("total-collabs"))/3);
                 if(parseInt($.cookie("total-collabs")) > parseInt($.cookie("begin"))){
                     $.cookie("list", (parseInt($.cookie("list")) < maxlist) ? (parseInt($.cookie("list"))+1) : maxlist,{expires: 30,path: '/'});
                     loadCompetences($.cookie("begin"), $.cookie("nb-collabs-show"));
+=======
+                var maxlist = Math.ceil(parseInt($.cookie("total-projects"))/3);
+                if(parseInt($.cookie("total-projects")) > parseInt($.cookie("begin"))){
+                    $.cookie("list", (parseInt($.cookie("list")) < maxlist) ? (parseInt($.cookie("list"))+1) : maxlist,{expires: 30,path: '/'});
+                    loadProjects($.cookie("begin"), $.cookie("nb-collabs-show"));
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
                 }else {
                     $.cookie("begin", (parseInt($.cookie("begin"))-3),{expires: 30,path: '/'});
                 }
             }else if($.cookie("nb-collabs-show") == 5) {
                 $.cookie("begin", (parseInt($.cookie("begin"))+5),{expires: 30,path: '/'});
+<<<<<<< HEAD
                 var maxlist = Math.ceil(parseInt($.cookie("total-collabs"))/5);
                 if(parseInt($.cookie("total-collabs")) > parseInt($.cookie("begin"))){
                     $.cookie("list", (parseInt($.cookie("list")) < maxlist) ? (parseInt($.cookie("list"))+1) : maxlist,{expires: 30,path: '/'});
                     loadCompetences($.cookie("begin"), $.cookie("nb-collabs-show"));
+=======
+                var maxlist = Math.ceil(parseInt($.cookie("total-projects"))/5);
+                if(parseInt($.cookie("total-projects")) > parseInt($.cookie("begin"))){
+                    $.cookie("list", (parseInt($.cookie("list")) < maxlist) ? (parseInt($.cookie("list"))+1) : maxlist,{expires: 30,path: '/'});
+                    loadProjects($.cookie("begin"), $.cookie("nb-collabs-show"));
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
                 }else {
                     $.cookie("begin", (parseInt($.cookie("begin"))-5),{expires: 30,path: '/'});
                 }
             }else if($.cookie("nb-collabs-show") == 8) {
                 $.cookie("begin", (parseInt($.cookie("begin"))+8),{expires: 30,path: '/'});
+<<<<<<< HEAD
                 var maxlist = Math.ceil(parseInt($.cookie("total-collabs"))/8);
                 if(parseInt($.cookie("total-collabs")) > parseInt($.cookie("begin"))){
                     $.cookie("list", (parseInt($.cookie("list")) < maxlist) ? (parseInt($.cookie("list"))+1) : maxlist,{expires: 30,path: '/'});
                     loadCompetences($.cookie("begin"), $.cookie("nb-collabs-show"));
+=======
+                var maxlist = Math.ceil(parseInt($.cookie("total-projects"))/8);
+                if(parseInt($.cookie("total-projects")) > parseInt($.cookie("begin"))){
+                    $.cookie("list", (parseInt($.cookie("list")) < maxlist) ? (parseInt($.cookie("list"))+1) : maxlist,{expires: 30,path: '/'});
+                    loadProjects($.cookie("begin"), $.cookie("nb-collabs-show"));
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
             }   }else {
                     $.cookie("begin", (parseInt($.cookie("begin"))-8),{expires: 30,path: '/'});
                 }
@@ -148,7 +183,11 @@
                 $.cookie("begin", parseInt($.cookie("begin")) > 0 ? (parseInt($.cookie("begin"))-3) : -1,{expires: 30,path: '/'});
                 if(parseInt($.cookie("begin")) >= 0){
                     $.cookie("list", (parseInt($.cookie("list")) > 1) ? (parseInt($.cookie("list"))-1) : 1,{expires: 30,path: '/'});
+<<<<<<< HEAD
                     loadCompetences($.cookie("begin"), $.cookie("nb-collabs-show"));
+=======
+                    loadProjects($.cookie("begin"), $.cookie("nb-collabs-show"));
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
                 }else {
                     $.cookie("begin", 0,{expires: 30,path: '/'});
                 }
@@ -156,7 +195,11 @@
                 $.cookie("begin", parseInt($.cookie("begin")) > 0 ? (parseInt($.cookie("begin"))-5) : -1,{expires: 30,path: '/'});
                 if(parseInt($.cookie("begin")) >= 0){
                     $.cookie("list", (parseInt($.cookie("list")) > 1) ? (parseInt($.cookie("list"))-1) : 1,{expires: 30,path: '/'});
+<<<<<<< HEAD
                     loadCompetences($.cookie("begin"), $.cookie("nb-collabs-show"));
+=======
+                    loadProjects($.cookie("begin"), $.cookie("nb-collabs-show"));
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
                 }else {
                     $.cookie("begin", 0,{expires: 30,path: '/'});
                 }
@@ -164,7 +207,11 @@
                 $.cookie("begin", parseInt($.cookie("begin")) > 0 ? (parseInt($.cookie("begin"))-8) : -1,{expires: 30,path: '/'});
                 if(parseInt($.cookie("begin")) >= 0){
                     $.cookie("list", (parseInt($.cookie("list")) > 1) ? (parseInt($.cookie("list"))-1) : 1,{expires: 30,path: '/'});
+<<<<<<< HEAD
                     loadCompetences($.cookie("begin"), $.cookie("nb-collabs-show"));
+=======
+                    loadProjects($.cookie("begin"), $.cookie("nb-collabs-show"));
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
             }   }else {
                     $.cookie("begin", 0,{expires: 30,path: '/'});
                 }
@@ -172,6 +219,7 @@
 
         $(".page-far-right").click(function(){
             if($.cookie("nb-collabs-show") == 3) {
+<<<<<<< HEAD
                 var rest = parseInt($.cookie("total-collabs")) % 3;
                 var list = Math.ceil(parseInt($.cookie("total-collabs"))/3);
                 $.cookie("begin", rest != 0 ? (parseInt($.cookie("total-collabs"))- rest) : (parseInt($.cookie("total-collabs"))- 3) ,{expires: 30,path: '/'});
@@ -194,6 +242,30 @@
                 if((parseInt($.cookie("begin")) == (parseInt($.cookie("total-collabs"))- rest) || parseInt($.cookie("begin")) == (parseInt($.cookie("total-collabs"))- 8)) && parseInt($.cookie("list")) != list){
                     $.cookie("list", list,{expires: 30,path: '/'});
                     loadCompetences($.cookie("begin"), $.cookie("nb-collabs-show"));
+=======
+                var rest = parseInt($.cookie("total-projects")) % 3;
+                var list = Math.ceil(parseInt($.cookie("total-projects"))/3);
+                $.cookie("begin", rest != 0 ? (parseInt($.cookie("total-projects"))- rest) : (parseInt($.cookie("total-projects"))- 3) ,{expires: 30,path: '/'});
+                if((parseInt($.cookie("begin")) == (parseInt($.cookie("total-projects"))- rest) || parseInt($.cookie("begin")) == (parseInt($.cookie("total-projects"))- 3)) && parseInt($.cookie("list")) != list){
+                    $.cookie("list", list,{expires: 30,path: '/'});
+                    loadProjects($.cookie("begin"), $.cookie("nb-collabs-show"));
+                }
+            }else if($.cookie("nb-collabs-show") == 5) {
+                var rest = parseInt($.cookie("total-projects")) % 5;
+                var list = Math.ceil(parseInt($.cookie("total-projects"))/5);
+                $.cookie("begin", rest != 0 ? (parseInt($.cookie("total-projects"))- rest) : (parseInt($.cookie("total-projects"))- 5) ,{expires: 30,path: '/'});
+                if((parseInt($.cookie("begin")) == (parseInt($.cookie("total-projects"))- rest) || parseInt($.cookie("begin")) == (parseInt($.cookie("total-projects"))- 5)) && parseInt($.cookie("list")) != list){
+                    $.cookie("list", list,{expires: 30,path: '/'});
+                    loadProjects($.cookie("begin"), $.cookie("nb-collabs-show"));
+                }
+            }else if($.cookie("nb-collabs-show") == 8) {
+                var rest = parseInt($.cookie("total-projects")) % 8;
+                var list = Math.ceil(parseInt($.cookie("total-projects"))/8);
+                $.cookie("begin", rest != 0 ? (parseInt($.cookie("total-projects"))- rest) : (parseInt($.cookie("total-projects"))- 8) ,{expires: 30,path: '/'});
+                if((parseInt($.cookie("begin")) == (parseInt($.cookie("total-projects"))- rest) || parseInt($.cookie("begin")) == (parseInt($.cookie("total-projects"))- 8)) && parseInt($.cookie("list")) != list){
+                    $.cookie("list", list,{expires: 30,path: '/'});
+                    loadProjects($.cookie("begin"), $.cookie("nb-collabs-show"));
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
                 }
             }
         });
@@ -203,19 +275,31 @@
                 $.cookie("begin", 0,{expires: 30,path: '/'});
                 if(parseInt($.cookie("begin")) == 0 && parseInt($.cookie("list")) != 1){
                     $.cookie("list", 1,{expires: 30,path: '/'});
+<<<<<<< HEAD
                     loadCompetences($.cookie("begin"), $.cookie("nb-collabs-show"));
+=======
+                    loadProjects($.cookie("begin"), $.cookie("nb-collabs-show"));
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
                 }
             }else if($.cookie("nb-collabs-show") == 5) {
                 $.cookie("begin", 0,{expires: 30,path: '/'});
                 if(parseInt($.cookie("begin")) == 0 && parseInt($.cookie("list")) != 1){
                     $.cookie("list", 1,{expires: 30,path: '/'});
+<<<<<<< HEAD
                     loadCompetences($.cookie("begin"), $.cookie("nb-collabs-show"));
+=======
+                    loadProjects($.cookie("begin"), $.cookie("nb-collabs-show"));
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
                 }
             }else if($.cookie("nb-collabs-show") == 8) {
                 $.cookie("begin", 0,{expires: 30,path: '/'});
                 if(parseInt($.cookie("begin")) == 0 && parseInt($.cookie("list")) != 1){
                     $.cookie("list", 1,{expires: 30,path: '/'});
+<<<<<<< HEAD
                     loadCompetences($.cookie("begin"), $.cookie("nb-collabs-show"));
+=======
+                    loadProjects($.cookie("begin"), $.cookie("nb-collabs-show"));
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
                 }
             }
         });
@@ -224,21 +308,33 @@
             $.cookie("nb-collabs-show", $('#nb-collabs-show').val(),{expires: 30,path: '/'});
             $.cookie("begin", 0,{expires: 30,path: '/'});
             $.cookie("list", 1,{expires: 30,path: '/'});
+<<<<<<< HEAD
             loadCompetences(0, $.cookie("nb-collabs-show"));
         });
 
     function loadCompetences(begin, limit) {
+=======
+            loadProjects(0, $.cookie("nb-collabs-show"));
+        });
+
+    function loadProjects(begin, limit) {
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
         $("#loading").fadeIn("fast");
         $("#info").fadeOut("fast", function(){$("#info").html("<p>Processing ...</p>")}).fadeIn("slow");
         var dataString = 'begin='+ begin + '&limit=' + limit;
 
         $.ajax({
                 type: "GET",
+<<<<<<< HEAD
                 url: "manager/modules/projet/actions/listprojet.php",
+=======
+                url: "manager/modules/projet/actions/listproject.php",
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
                 contentType: "text/xml; charset=utf-8",
                 data: dataString,
                 cache: false,
                 success: function (xml) {
+<<<<<<< HEAD
                     var hasChildren = ($(xml).children('competences').length > 0 && $(xml).find('competences').attr('total')!=0);
                         if (hasChildren) {
                             $("#mainform").fadeIn("fast");
@@ -246,12 +342,22 @@
                             reloadCompetencesHeader();
                             var i = 1;
                             $(xml).find("competence").each(function() {
+=======
+                    var hasChildren = ($(xml).children('projects').length > 0 && $(xml).find('projects').attr('total')!=0);
+                        if (hasChildren) {
+                            $("#mainform").fadeIn("fast");
+                            $("#page-info").html("Page <strong>"+$.cookie("list")+"</strong> / "+Math.ceil($(xml).find('projects').attr('total')/$.cookie("nb-collabs-show")));
+                            reloadProjectHeader();
+                            var i = 1;
+                            $(xml).find("project").each(function() {
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
                                 var tr = "";
                                 if(i%2 == 0)
                                 tr+= "<tr class=\"alternate-row\">";
                                 else {
                                 tr+= "<tr>";
                                 }
+<<<<<<< HEAD
                                 tr+= "<td><input name=\"check-collab\" id=\"check-collab"+$(this).find('competence_id').text()+"\" value=\""+$(this).find('competence_id').text()+"\" type=\"checkbox\"/></td>";
                                 tr+= "<td>"+$(this).find('competence_id').text()+"</td>";
                                 tr+= "<td>"+$(this).find('competence_nom').text()+"</td>";
@@ -259,13 +365,27 @@
                                 tr+= "<td class=\"options-width\">";
                                 tr+= "<a href=\"index.php?module=competence&option=edit\" title=\"Edit\" class=\"icon-1 info-tooltip\" onClick=\"$.cookie('comptoedit', parseInt("+$(this).find('competence_id').text()+"),{expires: 30,path: '/'});\"></a>";
 				tr+= "<a href=\"index.php?module=competence&option=delete\" title=\"Delete\" class=\"icon-2 info-tooltip\" onClick=\"$.cookie('comptodelete', parseInt("+$(this).find('competence_id').text()+"),{expires: 30,path: '/'});\"></a>";
+=======
+                                tr+= "<td><input name=\"check-project\" id=\"check-project"+$(this).find('id_projet').text()+"\" value=\""+$(this).find('id_projet').text()+"\" type=\"checkbox\"/></td>";
+                                tr+= "<td>"+$(this).find('id_projet').text()+"</td>";
+                                tr+= "<td>"+$(this).find('nom_projet').text()+"</td>";
+                                tr+= "<td>"+$(this).find('description_projet').text()+"</td>";
+                                tr+= "<td>"+$(this).find('date_creation_projet').text()+"</td>";
+                                tr+= "<td class=\"options-width\">";
+                                tr+= "<a href=\"index.php?module=project&option=edit\" title=\"Edit\" class=\"icon-1 info-tooltip\" onClick=\"$.cookie('projecttoedit', parseInt("+$(this).find('id_projet').text()+"),{expires: 30,path: '/'});\"></a>";
+				tr+= "<a href=\"index.php?module=project&option=delete\" title=\"Delete\" class=\"icon-2 info-tooltip\" onClick=\"$.cookie('projecttodelete', parseInt("+$(this).find('id_projet').text()+"),{expires: 30,path: '/'});\"></a>";
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
 				tr+= "</td>";
                                 tr+= "</tr>";
                                 i++;
                                 $("#product-table").append(tr).hide().fadeIn("fast");
                             });
                                 $("#loading").hide();
+<<<<<<< HEAD
                                 $("#info").fadeOut("fast", function(){$("#info").html("<p style=\"color: green;\"><span id=\"nb-collab\">"+$(xml).find('competences').attr('total')+"</span> competences trouvés.</p>")}).fadeIn("normal");
+=======
+                                $("#info").fadeOut("fast", function(){$("#info").html("<p style=\"color: green;\"><span id=\"nb-project\">"+$(xml).find('projects').attr('total')+"</span> projets créés.</p>")}).fadeIn("normal");
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
                                 $("#paging-table").fadeIn("fast");
                                 //table sorter
                                 $(".tablesorter").tablesorter();
@@ -293,20 +413,31 @@
                                 $('#mainform input[type=checkbox]').checkBox('toggle');
                                 return false;
                                 });
+<<<<<<< HEAD
                                 $.cookie("total-collabs", parseInt($(xml).find('competences').attr('total')),{expires: 30,path: '/'});
+=======
+                                $.cookie("total-projects", parseInt($(xml).find('projects').attr('total')),{expires: 30,path: '/'});
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
                                 $("#actions-box").show();
                         }else {
                                 $("#actions-box").hide();
                                 $.cookie("list", 0,{expires: 30,path: '/'});
+<<<<<<< HEAD
                                 $.cookie("total-collabs", 0,{expires: 30,path: '/'});
                                 $("#loading").hide();
                                 $("#info").fadeOut("fast", function(){$("#info").html("<p style=\"color: red;\">Vous n'avez pas ajouté des Competences ! Veuillez en ajouter pour pouvoir les lister ..</p>")}).fadeIn("normal", function(){$("#addnew").fadeIn("normal");$("#arrow-right").fadeIn("normal");});
+=======
+                                $.cookie("total-projects", 0,{expires: 30,path: '/'});
+                                $("#loading").hide();
+                                $("#info").fadeOut("fast", function(){$("#info").html("<p style=\"color: red;\">Vous n'avez pas ajouté des Projets ! Veuillez ajouter des Projets pour pouvoir les lister ..</p>")}).fadeIn("normal", function(){$("#addnew").fadeIn("normal");$("#arrow-right").fadeIn("normal");});
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
                         }
                 }
         });
         return false;
     }
 
+<<<<<<< HEAD
     function reloadCompetencesHeader(){
         var tabheader = '<tr>';
             tabheader+= '<th class="table-header-check"><a id="toggle-all" ></a> </th>';
@@ -314,23 +445,43 @@
             tabheader+= '<th class="table-header-repeat line-left"><a href="">Nom Comp</a></th>';
             tabheader+= '<th class="table-header-repeat line-left"><a href="">Description Comp</a></th>';
             tabheader+= '<th class="table-header-options line-left"><a href="">Options</a></th>';
+=======
+    function reloadProjectHeader(){
+        var tabheader = '<tr>';
+            tabheader+= '<th class="table-header-check"><a id="toggle-all" ></a> </th>';
+            tabheader+= '<th class="table-header-repeat line-left" style="width: 80px;"><a href="">Id-Projet</a></th>';
+            tabheader+= '<th class="table-header-repeat line-left" style="width: 250px;"><a href="">Nom-Projet</a></th>';
+            tabheader+= '<th class="table-header-repeat line-left" style="width: 250px;"><a href="">Description</a></th>';
+            tabheader+= '<th class="table-header-repeat line-left" style="width: 120px;"><a href="">Date Création</a></th>';
+            tabheader+= '<th class="table-header-options line-left" style="width: 66px;min-width: 80px;"><a href="">Options</a></th>';
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
             tabheader+= '</tr>';
             $("#product-table").html(tabheader).hide().fadeIn("fast");
     }
 
     $("#edit-action").click(function(){
+<<<<<<< HEAD
         var nb_checked = $("input[name=check-collab]:checked").length;
         if(nb_checked == 0) {
             alert("Veuillez selectionner le projet à modifier !");
         } else if(nb_checked == 1) {
             $.cookie("comptoedit", parseInt($("input[name=check-collab]:checked").val()),{expires: 30,path: '/'});
             document.location.href = "index.php?module=competence&option=edit&id="+parseInt($("input[name=check-collab]:checked").val());
+=======
+        var nb_checked = $("input[name=check-project]:checked").length;
+        if(nb_checked == 0) {
+            alert("Veuillez selectionner le projet à modifier !");
+        } else if(nb_checked == 1) {
+            $.cookie("projecttoedit", parseInt($("input[name=check-project]:checked").val()),{expires: 30,path: '/'});
+            document.location.href = "index.php?module=project&option=edit&id="+parseInt($("input[name=check-project]:checked").val());
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
         } else {
             alert("Modification multiple impossible !");
         }
     });
 
     $("#multidelete-action").click(function(){
+<<<<<<< HEAD
         var nb_checked = $("input[name=check-collab]:checked").length;
         if(nb_checked == 0) {
             alert("Veuillez selectionner au moins un projet à supprimer !");
@@ -338,17 +489,35 @@
             var id_todelete = "";
             var i = 0;
             $("input[name=check-collab]:checked").each(function(){
+=======
+        var nb_checked = $("input[name=check-project]:checked").length;
+        if(nb_checked == 0) {
+            alert("Veuillez selectionner au moins 1 projet à supprimer !");
+        } else {
+            var id_todelete = "";
+            var i = 0;
+            $("input[name=check-project]:checked").each(function(){
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
                    id_todelete+= $(this).val();
                    i++;
                    if(nb_checked > i) {
                       id_todelete+= "-";
                    }
             });
+<<<<<<< HEAD
             $.cookie("comptodelete", id_todelete,{expires: 30,path: '/'});
             document.location.href = "index.php?module=manager&option=delete&id="+id_todelete;
+=======
+            $.cookie("projecttodelete", id_todelete,{expires: 30,path: '/'});
+            document.location.href = "index.php?module=project&option=delete&id="+id_todelete;
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
         }
     });
 
     $("#content-outer").height($("#sidebar").height());
+<<<<<<< HEAD
     loadCompetences($.cookie("begin"), $.cookie("nb-collabs-show"));
+=======
+    loadProjects($.cookie("begin"), $.cookie("nb-collabs-show"));
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
 </script>

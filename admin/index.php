@@ -212,6 +212,7 @@
                                     }
                                 }
                                 break;
+<<<<<<< HEAD
                             case "cat_competence":
                                 if(isset($_GET['option'])){
                                     switch ($_GET['option']){
@@ -231,18 +232,42 @@
                                             break;
                                     }
                                 }
+=======
+                                case "cat_competence":
+                                    if(isset($_GET['option'])){
+                                        switch ($_GET['option']){
+                                            case "add_cat":
+                                                include_once 'modules/cat_competences/forms/add_cat_competence.html';
+                                                break;
+                                            case "list_cat":
+                                                include_once 'modules/cat_competences/forms/list_cat_competence.html';
+                                                break;
+                                            case "edit_cat":
+                                                include_once 'modules/cat_competences/forms/edit_cat_competence.html';
+                                                break;
+                                            case "delete_cat":
+                                                include_once 'modules/cat_competences/forms/delete_cat_competence.html';
+                                                break;
+                                            default :
+                                                break;
+                                        }
+                                    }
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
                                 break;
                             case "service":
                                 if(isset($_GET['option'])){
                                     switch ($_GET['option']){
                                         case "add":
-                                            echo '<div class="breadcrumb_divider"></div> <a href="javascript:void(0);" class="current">Ajouter Service</a>';
+                                            include_once 'modules/services/forms/addservice.html';
                                             break;
                                         case "list":
-                                            echo '<div class="breadcrumb_divider"></div> <a href="javascript:void(0);" class="current">Liste Service</a>';
+                                             include_once 'modules/services/forms/listservice.html';
                                             break;
                                         case "edit":
-                                            echo '<div class="breadcrumb_divider"></div> <a href="javascript:void(0);" class="current">Editer Service</a>';
+                                            include_once 'modules/services/forms/editservice.html';
+                                            break;
+                                        case "delete":
+                                            include_once 'modules/services/forms/deleteservice.html';
                                             break;
                                         default :
                                             break;

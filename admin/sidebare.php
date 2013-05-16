@@ -33,8 +33,8 @@
 
     <h3>Services</h3>
     <ul class="toggle">
-        <li class="icn_new_article"><a href="#">Ajouter Service</a></li>
-        <li class="icn_edit_article"><a href="#">Modifier Service</a></li>
+        <li class="icn_new_article"><a href="index.php?module=service&option=add">Ajouter service</a></li>
+        <li class="icn_categories"><a href="index.php?module=service&option=list">Liste des services</a></li>
     </ul>
 </aside>
 <!-- end of sidebar -->

@@ -36,7 +36,11 @@
                             <img src="images/arrow-right.jpg" alt="Add This" title="Add This .." id="arrow-right" style="float:right; opacity: .6; display: none; margin: 15px 50px 0 0;" />
                             <a href="index.php?module=project&option=add" class="addnew" id="addnew" style="display: none;">Ajouter un autre Projet</a>
                             <!-- start id-form -->
+<<<<<<< HEAD
                                 <form id="add-competence" action="" method="POST">
+=======
+                                <form id="add-project" action="" method="POST">
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
                                     <fieldset style="padding: 10px 10px 0 10px;">
                                         <legend style="color: red;">Information du projet</legend>
                                         <table border="0" cellpadding="" cellspacing="" class="id-form">
@@ -52,15 +56,22 @@
                                                     <td><textarea name ="desc" rows="3" cols="" class="form-textarea" required="required"></textarea></td>
                                                     <td></td>
                                                 </tr>
+<<<<<<< HEAD
                                                 <tr>
                                                     <th valign="top">Date de création :</th>
                                                     <td><input name="date_cr" type="date"  required="required"/></td>
                                                 </tr>
+=======
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
                                             </tbody>
                                         </table>
                                      </fieldset>
                                     
+<<<<<<< HEAD
                                     <input type="submit" name="submit" style="float: right; margin: 35px 50px 0px 15px; width: 100px;color: green;font-weight: bold;cursor: pointer;" value="Ajouter" />
+=======
+                                    <input type="submit" name="submit" style="float: right; margin: 35px 50px 0px 15px; width: 100px;color: red;font-weight: bold;cursor: pointer;" value="Ajouter" />
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
                                     <input type="reset" value="" style="float: right; margin: 34px 0 0 0;" id="reset" class="form-reset" />
                                 </form>
                             <!-- end id-form  -->
@@ -86,6 +97,7 @@
 </div>
 <script type="text/javascript">
 $("#content-outer").height($("#sidebar").height());
+<<<<<<< HEAD
 $('#add-competence').submit(function(){
         $("#info").fadeOut("fast", function(){$("#info").html("<p>Processing ...</p>")}).fadeIn("slow");
         $("#add-competence").fadeOut("fast", function(){$("#loading").fadeIn("normal");});
@@ -98,21 +110,44 @@ $('#add-competence').submit(function(){
     var dataString = 'nom_projet='+ competence[0]
                      + '&description_projet=' + competence[1]
                      + '&date=' + competence[2]
+=======
+$('#add-project').submit(function(){
+        $("#info").fadeOut("fast", function(){$("#info").html("<p>Processing ...</p>")}).fadeIn("slow");
+        $("#add-project").fadeOut("fast", function(){$("#loading").fadeIn("normal");});
+        $("#content-outer").height($("#sidebar").height());
+        var project = new Array(
+                    $("input[name=nom]").val(),
+                    $("textarea[name=desc]").val()
+                );
+    var dataString = 'nom_projet='+ project[0]
+                     + '&description_projet=' + project[1]
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
                      + '&submit=true'
                      ;
 
         $.ajax({
                 type: "POST",
+<<<<<<< HEAD
                 url: "manager/modules/projet/actions/addprojet.php",
+=======
+                url: "manager/modules/projet/actions/addproject.php",
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
                 data: dataString,
                 cache: false,
                 success: function (a) {
                         if (a == 1) {
                                 $("#loading").hide();
+<<<<<<< HEAD
                                 $("#info").fadeOut("fast", function(){$("#info").html("<p style=\"color: green;\">Un nouveau projet vient d'etre ajouté.</p>")}).fadeIn("normal", function(){$("#addnew").fadeIn("normal");$("#arrow-right").fadeIn("normal");});
                         } else if(a == "nom_projet") {
                                 $("#loading").hide();
                                 $("#info").fadeOut("fast", function(){$("#info").html("<p style=\"color: red;\">Une erreure est survenue ! <br />Vérifiez le nom d projet !</p>")}).fadeIn("normal");
+=======
+                                $("#info").fadeOut("fast", function(){$("#info").html("<p style=\"color: green;\">Un nouveau projet vient d'être ajouté.</p>")}).fadeIn("normal", function(){$("#addnew").fadeIn("normal");$("#arrow-right").fadeIn("normal");});
+                        } else if(a == "nom_projet") {
+                                $("#loading").hide();
+                                $("#info").fadeOut("fast", function(){$("#info").html("<p style=\"color: red;\">Une erreure est survenue ! <br />Vérifiez le nom du projet !</p>")}).fadeIn("normal");
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
                         } else if(a == "description_projet") {
                                 $("#loading").hide();
                                 $("#info").fadeOut("fast", function(){$("#info").html("<p style=\"color: red;\">Une erreure est survenue ! <br />Vérifiez la description du projet !</p>")}).fadeIn("normal");
@@ -127,4 +162,8 @@ $('#add-competence').submit(function(){
         });
         return false;
 });
+<<<<<<< HEAD
 </script>
+=======
+</script>
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c

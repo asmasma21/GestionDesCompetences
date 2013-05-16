@@ -11,14 +11,28 @@ if(defined('forcompetence')){
     include_once "CompetenceDAO.class.php";
 }
 
+<<<<<<< HEAD
 if(defined('forprojet')){
     include_once "ProjetDAO.class.php";
 }
 
+=======
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
 if(defined('forcatcompetence')){
     include_once "CatCompetenceDAO.class.php";
 }
 
+<<<<<<< HEAD
+=======
+if(defined('forservice')){
+    include_once "ServiceDAO.class.php";
+}
+
+if(defined('forprojet')){
+    include_once "ProjetDAO.class.php";
+}
+
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
 /* 
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -66,8 +80,19 @@ final class DAOFactory {
         // CompetenceDAO implements ICompetenceDAO
         return CatCompetenceDAO::getCatCompetenceDAO();
     }
+<<<<<<< HEAD
     public function getProjetDAO() {
         // ProjetDAO implements IProjetDAO
+=======
+    
+    public function getServiceDAO() {
+        // ServiceDAO implements IServiceDAO
+        return ServiceDAO::getServiceDAO();
+    }
+
+    public function getProjetDAO() {
+        // ServiceDAO implements IServiceDAO
+>>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
         return ProjetDAO::getProjetDAO();
     }
 }

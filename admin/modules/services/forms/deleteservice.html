@@ -7,7 +7,7 @@
 
 	<!--  start page-heading -->
 	<div id="page-heading">
-		<h1>Suppression de Projet</h1>
+		<h1>Suppression de Services</h1>
 	</div>
 	<!-- end page-heading -->
 
@@ -32,7 +32,7 @@
                             <input type="button" style="float: left; cursor: pointer; width: 70px; margin: -7px 0 0 8px;" name="cancelsupp" id="cancel_supp" value="Annuler" />
                             <div class="clear">&nbsp;</div>
                             <img src="images/arrow-right.jpg" alt="Add This" title="Add This .." id="arrow-right" style="float:right; display: none; opacity: .6; margin: 15px 50px 0 0;" />
-                            <a href="index.php?module=project&option=list" class="addnew" id="addnew" style="left: 48%; display: none;">Lister Projets</a>
+                            <a href="index.php?module=service&option=list" class="addnew" id="addnew" style="left: 48%; display: none;">Lister Services</a>
 			</div>
 			<!--  end content-table  -->
 
@@ -58,30 +58,30 @@
 <script type="text/javascript">
 $("#content-outer").height($("#sidebar").height());
 $("#cancel_supp").click(function(){
-    document.location.href = "index.php?module=project&option=list";
+    document.location.href = "index.php?module=service&option=list";
 });
 
 $("#valid_supp").click(function(){
     $("#valid_supp").hide();
     $("#cancel_supp").hide();
-    $("#info").fadeOut("fast", function(){$("#info").text("Processing ...")}).fadeIn("slow");
+    $("#info").fadeOut("fast", function(){$("#info").text("En cours ...")}).fadeIn("slow");
     $("#content-outer").height($("#sidebar").height());
 
-    var dataString = 'id='+ $.cookie("projecttodelete");
-    $.cookie("comptodelete", "",{expires: -30,path: '/'});
+    var dataString = 'id='+ $.cookie("servicestodelete");
+    $.cookie("servicestodelete", "",{expires: -30,path: '/'});
 
     $.ajax({
             type: "POST",
-            url: "manager/modules/projet/actions/deleteproject.php",
+            url: "admin/modules/services/actions/deleteservice.php",
             data: dataString,
             cache: false,
             success: function (a) {
                     if (a == 1) {
                             $("#loading").hide();
-                            $("#info").fadeOut("fast", function(){$("#info").html("<p style=\"color: green;\">Projet supprimés avec succès.</p>")}).fadeIn("normal", function(){$("#addnew").fadeIn("normal");$("#arrow-right").fadeIn("normal");});
+                            $("#info").fadeOut("fast", function(){$("#info").html("<p style=\"color: green;\">Service supprimé avec succès.</p>")}).fadeIn("normal", function(){$("#addnew").fadeIn("normal");$("#arrow-right").fadeIn("normal");});
                     } else if(a == 0) {
                             $("#loading").hide();
-                            $("#info").fadeOut("fast", function(){$("#info").html("<p style=\"color: red;\">Une erreure est survenue ! Projet introuvable dans la base!</p>")}).fadeIn("normal", function(){$("#addnew").fadeIn("normal");$("#arrow-right").fadeIn("normal");});
+                            $("#info").fadeOut("fast", function(){$("#info").html("<p style=\"color: red;\">Une erreure est survenue ! Service introuvable dans la base!</p>")}).fadeIn("normal", function(){$("#addnew").fadeIn("normal");$("#arrow-right").fadeIn("normal");});
                     }else {
                             $("#loading").hide();
                             $("#info").fadeOut("fast", function(){$("#info").html("<p style=\"color: red;\">Une erreure est survenue !</p>")}).fadeIn("normal", function(){$("#addnew").fadeIn("normal");$("#arrow-right").fadeIn("normal");});

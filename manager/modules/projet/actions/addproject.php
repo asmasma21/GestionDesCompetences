@@ -8,11 +8,7 @@ if($_SESSION['c_user']->privilege != 1) {
 }
 
 require_once "../../../../class/business/Projet.php";
-<<<<<<< HEAD
-=======
-require_once "../../../../class/business/User.php";
 
->>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
 
 
 /* 
@@ -36,31 +32,16 @@ if(isset($_POST['submit'])) {
         echo "description_projet";
         die();
     }
-<<<<<<< HEAD
-    
-    $projet = new Projet($projet);
-=======
 	
-	if(isset($_POST['date_creation_projet'])){
-       $projet['date_creation_projet'] = $_POST['date_creation_projet'];
-    }else{
-       echo "date_creation_projet";
-	   //$projet['date_creation_projet'] = date("Y-m-d");
-	   die();
-	}
-	   
-	   //$projet['id_service'] = $user['id_service'];
-       $projet = new Projet($projet);
->>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
+    $projet['date_creation_projet'] = date("Y-m-d");
+    $projet['id_service'] = $_SESSION['c_user']->id_service;
+
+    $projet = new Projet($projet);
 
     define('fromajax',true);
     define('forprojet',true);
 
-<<<<<<< HEAD
-    //ComeptenceDAO.class.php requires
-=======
     //ProjetDAO.class.php requires
->>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
     require_once "../../../../class/business/Projet.php";
     require_once "../../../../lib/functions.php";
     require_once "../../../../class/dao/IProjetDAO.interface.php";
@@ -82,8 +63,4 @@ if(isset($_POST['submit'])) {
     echo 'test';
     die();
 }
-<<<<<<< HEAD
 ?>
-=======
-?>
->>>>>>> 8f59c7ad32652b89422144b74e3a390884e4c07c
