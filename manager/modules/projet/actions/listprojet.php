@@ -41,7 +41,7 @@
     echo "<?xml version='1.0' encoding='utf-8'?>\n";
     echo "<projets total=\"".count(DAOFactory::getDAOFactory()->getProjetDAO()->selectProjets($projets_filtre, ""))."\">\n";
     foreach ($projets as $projet){
-        echo "<competence>\n";
+        echo "<projet>\n";
             echo "<projet_id>".$projet["id_projet"]."</projet_id>";
             echo "<projet_nom>".$projet["nom_projet"]."</projet_nom>";
             echo "<projet_description>".$projet["description_projet"]."</projet_description>";
